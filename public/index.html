@@ -1,0 +1,955 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="calculator.js"></script>
+	<style type="text/css">
+    .alt_color {		background-color: #F7F7F7;
+    }
+    .error {		display: none;
+            color: red;	
+            float: right;
+    }
+    #info_box {		
+            display: none;	
+            background-color: #E5E5E5;
+            margin: 10px auto 5px auto;
+            border: 1px solid #999;	
+            padding: 10px;
+    }
+    th {
+        border: none;
+        background-color: #CCC;	
+    }
+    </style>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Student Online Self Assessment</title>
+</head>
+
+<body>
+<h2>Take our Student Online Self-Assessment Survey to find out if you're a good candidate for online classes</h2>
+<h3>Use this self-assessment to gauge your readiness for online learning.</h3>
+<p>The following four characteristics are common for successful online students:</p>
+<ul>
+  <li>Basic technical and academic skills</li>
+  <li>Ability to study independently</li>
+  <li>Good organizational skills</li>
+  <li>Willing to devote the same amount of time and effort as a face-to-face course</li>
+</ul>
+<p>To get a good idea of your chances for success as an online student, rate how well each item below describes yourself.</p>
+<form name="SurveyForm" id="SurveyForm" method="get">
+            <table bordercolor="#" border="1">
+              <tbody>
+                <tr>
+                  <td colspan="6" bgcolor="#FFFFFF"><p><strong>Directions:</strong> The following items measure your ability to perform different tasks. There are no right or wrong answers so your first reaction is usually best. Please do not omit any items. Rate how well each item describes you by selecting the button in the correct column for each item.</p></td>
+                </tr>
+                <tr valign="bottom">
+                  <th align="left">Computer Skills</th>
+                  <th width="1""%">Strongly Disagree</th>
+                  <th width="1""%">Disagree</th>
+                  <th width="1""%">Neither Agree nor Disagree</th>
+                  <th width="1""%">Agree</th>
+                  <th width="1""%">Strongly Agree</th>
+                </tr>
+                <tr id="a1">
+                  <td class="entry">I am capable of learning new technologies.&nbsp;
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="a1" value="1" class="a1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a1" value="2" class="a1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a1" value="3" class="a1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a1" value="4" class="a1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a1" value="5" class="a1" />
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I am capable of sending and receiving e-mail.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="a2" value="1" class="a2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a2" value="2" class="a2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a2" value="3" class="a2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a2" value="4" class="a2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a2" value="5" class="a2" />
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I am capable of attaching files to an e-mail message.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="a3" value="1" class="a3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a3" value="2" class="a3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a3" value="3" class="a3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a3" value="4" class="a3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a3" value="5" class="a3" />
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I am a competent Internet browser.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="a4" value="1" class="a4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a4" value="2" class="a4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a4" value="3" class="a4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a4" value="4" class="a4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a4" value="5" class="a4" />
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I am capable of using standard word processing software.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="a5" value="1" class="a5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a5" value="2" class="a5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a5" value="3" class="a5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a5" value="4" class="a5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a5" value="5" class="a5" />
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I am capable of managing files on a computer.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="a6" value="1" class="a6" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a6" value="2" class="a6" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a6" value="3" class="a6" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a6" value="4" class="a6" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a6" value="5" class="a6" />
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I can download new software when necessary.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="a7" value="1" class="a7" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a7" value="2" class="a7" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a7" value="3" class="a7" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a7" value="4" class="a7" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a7" value="5" class="a7" />
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I can install new software when necessary.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="a8" value="1" class="a8" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a8" value="2" class="a8" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a8" value="3" class="a8" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a8" value="4" class="a8" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a8" value="5" class="a8" />
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I can copy and paste text using a computer.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="a9" value="1" class="a9" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a9" value="2" class="a9" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a9" value="3" class="a9" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a9" value="4" class="a9" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a9" value="5" class="a9" />
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I am capable of using discussion boards online.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="a10" value="1" class="a10" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a10" value="2" class="a10" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a10" value="3" class="a10" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a10" value="4" class="a10" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a10" value="5" class="a10" />
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I am capable of using chat rooms online.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="a11" value="1" class="a11" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a11" value="2" class="a11" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a11" value="3" class="a11" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a11" value="4" class="a11" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="a11" value="5" class="a11" />
+                  </center></td>
+                </tr>
+                <tr valign="bottom">
+                  <th align="left">Independent Learning</th>
+                  <th width="1""%">Strongly Disagree</th>
+                  <th width="1""%">Disagree</th>
+                  <th width="1""%">Neither Agree nor Disagree</th>
+                  <th width="1""%">Agree</th>
+                  <th width="1""%">Strongly Agree</th>
+                </tr>
+                <tr>
+                  <td class="entry">I am capable of prioritizing my responsibilities.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="b1" value="1" class="b1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b1" value="2" class="b1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b1" value="3" class="b1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b1" value="4" class="b1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b1" value="5" class="b1" />
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I am a good time manager.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="b2" value="1" class="b2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b2" value="2" class="b2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b2" value="3" class="b2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b2" value="4" class="b2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b2" value="5" class="b2" />
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I am a procrastinator.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="b3" value="1" class="b3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b3" value="2" class="b3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b3" value="3" class="b3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b3" value="4" class="b3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b3" value="5" class="b3" />
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I am capable of making time for my coursework.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="b4" value="5" class="b4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b4" value="4" class="b4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b4" value="3" class="b4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b4" value="2" class="b4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b4" value="1" class="b4" />
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I am able to balance many tasks at one time.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="b5" value="1" class="b5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b5" value="2" class="b5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b5" value="3" class="b5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b5" value="4" class="b5"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b5" value="5" class="b5" />
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I am goal-oriented.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="b6" value="1" class="b6" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b6" value="2" class="b6" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b6" value="3" class="b6" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b6" value="4" class="b6" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b6" value="5" class="b6" />
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I am self-disciplined when it comes to my studies.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="b7" value="1" class="b7" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b7" value="2" class="b7" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b7" value="3" class="b7" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b7" value="4" class="b7" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b7" value="5" class="b7" />
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I am self-motivated.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="b8" value="1" class="b8" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b8" value="2" class="b8" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b8" value="3" class="b8" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b8" value="4" class="b8" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b8" value="5" class="b8" />
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I take responsibility for my learning.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="b9" value="1" class="b9" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b9" value="2" class="b9" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b9" value="3" class="b9" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b9" value="4" class="b9" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b9" value="5" class="b9" />
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I am capable of critical thinking.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="b10" value="1" class="b10" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b10" value="2" class="b10" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b10" value="3" class="b10" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b10" value="4" class="b10" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="b10" value="5" class="b10" />
+                  </center></td>
+                </tr>
+                <tr valign="bottom">
+                  <th align="left">Dependent Learning </th>
+                  <th width="1""%">Strongly Disagree</th>
+                  <th width="1""%">Disagree</th>
+                  <th width="1""%">Neither Agree nor Disagree</th>
+                  <th width="1""%">Agree</th>
+                  <th width="1""%">Strongly Agree</th>
+                </tr>
+                <tr>
+                  <td class="entry">I often leave tasks unfinished.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="c1" value="5" class="c1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c1" value="4" class="c1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c1" value="3" class="c1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c1" value="2" class="c1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c1" value="1" class="c1" />
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I require help to understand written instructions.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="c2" value="5" class="c2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c2" value="4" class="c2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c2" value="3" class="c2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c2" value="2" class="c2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c2" value="1" class="c2" />
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I wait until the last minute to work on assignments.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="c3" value="5" class="c3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c3" value="4" class="c3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c3" value="3" class="c3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c3" value="2" class="c3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c3" value="1" class="c3" />
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I have trouble comprehending what I read.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="c4" value="5" class="c4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c4" value="4" class="c4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c4" value="3" class="c4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c4" value="2" class="c4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c4" value="1" class="c4" />
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I need faculty to remind me of assignment due dates.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="c5" value="5" class="c5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c5" value="4" class="c5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c5" value="3" class="c5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c5" value="2" class="c5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c5" value="1" class="c5" />
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I need incentives/rewards to motivate me to complete a task.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="c6" value="5" class="c6" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c6" value="4" class="c6" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c6" value="3" class="c6" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c6" value="2" class="c6" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="c6" value="1" class="c6" />
+                  </center></td>
+                </tr>
+                <tr valign="bottom">
+                  <th align="left">Need for Online Learning</th>
+                  <th width="1""%">Strongly Disagree</th>
+                  <th width="1""%">Disagree</th>
+                  <th width="1""%">Neither Agree nor Disagree</th>
+                  <th width="1""%">Agree</th>
+                  <th width="1""%">Strongly Agree</th>
+                </tr>
+                <tr>
+                  <td class="entry">Because of my personal schedule, I need online courses.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="d1" value="1" class="d1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d1" value="2" class="d1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d1" value="3" class="d1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d1" value="4" class="d1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d1" value="5" class="d1" />
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">It is difficult for me to go to campus to complete course requirements.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="d2" value="1" class="d2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d2" value="2" class="d2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d2" value="3" class="d2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d2" value="4" class="d2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d2" value="5" class="d2" />
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I need online courses because of my geographical distance from universities.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="d3" value="1" class="d3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d3" value="2" class="d3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d3" value="3" class="d3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d3" value="4" class="d3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d3" value="5" class="d3" />
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I need online courses because of my work schedule.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="d4" value="1" class="d4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d4" value="2" class="d4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d4" value="3" class="d4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d4" value="4" class="d4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d4" value="5" class="d4" />
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I need the freedom of completing coursework at the time and place of my choosing.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="d5" value="1" class="d5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d5" value="2" class="d5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d5" value="3" class="d5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d5" value="4" class="d5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="d5" value="5" class="d5" />
+                  </center></td>
+                </tr>
+                <tr valign="bottom">
+                  <th align="left">Academic Skills</th>
+                  <th width="1""%">Strongly Disagree</th>
+                  <th width="1""%">Disagree</th>
+                  <th width="1""%">Neither Agree nor Disagree</th>
+                  <th width="1""%">Agree</th>
+                  <th width="1""%">Strongly Agree</th>
+                </tr>
+                <tr>
+                  <td class="entry">I can learn by working independently.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="e1" value="1" class="e1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e1" value="2" class="e1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e1" value="3" class="e1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e1" value="4" class="e1" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e1" value="5" class="e1" />
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I am self-directed in my learning.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="e2" value="1" class="e2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e2" value="2" class="e2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e2" value="3" class="e2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e2" value="4" class="e2" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e2" value="5" class="e2" />
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I am capable of solving problems alone.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="e3" value="1" class="e3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e3" value="2" class="e3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e3" value="3" class="e3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e3" value="4" class="e3" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e3" value="5" class="e3" />
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I need face-to-face interaction to learn.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="e4" value="5" class="e4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e4" value="4" class="e4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e4" value="3" class="e4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e4" value="2" class="e4" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e4" value="1" class="e4" />
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I need faculty feedback on my completed assignments.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="e5" value="5" class="e5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e5" value="4" class="e5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e5" value="3" class="e5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e5" value="2" class="e5" />
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e5" value="1" class="e5" />
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I am a good reader.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="e6" value="1" class="e6"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e6" value="2" class="e6"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e6" value="3" class="e6"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e6" value="4" class="e6"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e6" value="5" class="e6"/>
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I need classroom discussion to learn.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="e7" value="1" class="e7"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e7" value="2" class="e7"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e7" value="3" class="e7"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e7" value="4" class="e7"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e7" value="5" class="e7"/>
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I am capable of asking for help when I have a problem.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="e8" value="1" class="e8"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e8" value="2" class="e8"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e8" value="3" class="e8"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e8" value="4" class="e8"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e8" value="5" class="e8"/>
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I am comfortable learning new skills.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="e9" value="1" class="e9"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e9" value="2" class="e9"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e9" value="3" class="e9"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e9" value="4" class="e9"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e9" value="5" class="e9"/>
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I read carefully.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="e10" value="1" class="e10"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e10" value="2" class="e10"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e10" value="3" class="e10"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e10" value="4" class="e10"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e10" value="5" class="e10"/>
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I am a good writer.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="e11" value="1" class="e11"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e11" value="2" class="e11"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e11" value="3" class="e11"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e11" value="4" class="e11"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e11" value="5" class="e11"/>
+                  </center></td>
+                </tr>
+                <tr class="alt_color">
+                  <td class="entry">I am capable of following written instructions.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="e12" value="1" class="e12"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e12" value="2" class="e12"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e12" value="3" class="e12"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e12" value="4" class="e12"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e12" value="5" class="e12"/>
+                  </center></td>
+                </tr>
+                <tr>
+                  <td class="entry">I am capable of conveying my ideas in writing.
+                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
+                  <td><center>
+                    <input type="radio" name="e13" value="1" class="e13"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e13" value="2" class="e13"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e13" value="3" class="e13"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e13" value="4" class="e13"/>
+                  </center></td>
+                  <td><center>
+                    <input type="radio" name="e13" value="5" class="e13"/>
+                  </center></td>
+                </tr>
+                <tr>
+                  <td colspan="6"><div id="info_box"></div>
+                    <center>
+                      <a href="#" id="submit"><img src="images/submit.png" alt="submit" border="0" style="border: none;"/></a>
+                    </center></td>
+                </tr>
+              </tbody>
+  </table>
+          </form>
+          * This survey is based on the self-assessment test that was created by <a href="http://faculty.txwes.edu/mskerr" target="_blank">Marcel S. Kerr</a>, Kimberly Rynearson, and Marcus C. Kerr;
+            TOOLS: Test of Online Learning Success and is being used with their permission.
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"47cb2f872cab4ef58e03637f47257060","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
