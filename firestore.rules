@@ -1,0 +1,19 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Only Cloud Functions can access metadata collection for rate limiting
+    // This prevents public users from reading/writing rate limit data
+    match /metadata/{document=**} {
+      allow read: if false;
+      allow write: if false;
+    }
+
+    // Deny all other access by default
+    // Survey responses are NOT stored in Firestore
+    // Only rate limiting metadata is stored
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

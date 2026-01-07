@@ -1,0 +1,454 @@
+/* Modern Student Survey Styles */
+/* Mobile-first responsive design with CSS Grid and Flexbox */
+
+/* ===== CSS Reset & Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Color palette */
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #27ae60;
+  --background-light: #f8f9fa;
+  --background-alt: #e9ecef;
+  --border-color: #dee2e6;
+  --text-color: #333;
+  --text-light: #666;
+  --error-color: #e74c3c;
+  --success-color: #27ae60;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-light);
+  padding: var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Typography ===== */
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-light);
+}
+
+ul {
+  margin: var(--spacing-sm) 0 var(--spacing-md) var(--spacing-lg);
+}
+
+li {
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-light);
+}
+
+/* ===== Form Container ===== */
+#SurveyForm {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: var(--spacing-lg);
+}
+
+/* ===== Student Information Section ===== */
+.student-info {
+  background: var(--background-alt);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.student-info h3 {
+  margin-bottom: var(--spacing-md);
+  color: var(--primary-color);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .form-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-row.single {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+  padding: var(--spacing-sm);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+}
+
+.form-group input.error {
+  border-color: var(--error-color);
+}
+
+/* ===== Survey Sections ===== */
+.survey-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.section-header {
+  background: var(--primary-color);
+  color: white;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.section-header h4 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.scale-labels {
+  display: none; /* Hidden on mobile */
+  grid-template-columns: 1fr repeat(5, minmax(80px, 1fr));
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--background-alt);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 2px solid var(--border-color);
+}
+
+@media (min-width: 1024px) {
+  .scale-labels {
+    display: grid;
+  }
+}
+
+.scale-labels .label-text {
+  text-align: left;
+}
+
+/* ===== Survey Questions ===== */
+.question-list {
+  background: white;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.question-item {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.question-item:nth-child(even) {
+  background: var(--background-light);
+}
+
+.question-item:last-child {
+  border-bottom: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.question-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .question-content {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+}
+
+.question-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+/* ===== Radio Button Group ===== */
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  justify-content: flex-start;
+}
+
+@media (min-width: 768px) {
+  .radio-group {
+    gap: var(--spacing-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .radio-group {
+    gap: var(--spacing-sm);
+    flex-wrap: nowrap;
+  }
+}
+
+.radio-option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+/* Custom radio button styling */
+.radio-option input[type="radio"] {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.radio-option input[type="radio"]:hover {
+  border-color: var(--secondary-color);
+}
+
+.radio-option input[type="radio"]:checked {
+  border-color: var(--secondary-color);
+  background-color: var(--secondary-color);
+}
+
+.radio-option input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+}
+
+.radio-label {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: var(--spacing-xs);
+  line-height: 1.2;
+  max-width: 80px;
+}
+
+@media (min-width: 1024px) {
+  .radio-label {
+    display: none; /* Hide on desktop, use header labels instead */
+  }
+}
+
+/* ===== Error Messages ===== */
+.error {
+  color: var(--error-color);
+  font-size: 0.9rem;
+  display: none;
+  margin-top: var(--spacing-xs);
+}
+
+.error.show {
+  display: block;
+}
+
+.question-item.has-error {
+  background-color: #fff5f5;
+  border-left: 4px solid var(--error-color);
+}
+
+/* ===== Submit Section ===== */
+.submit-section {
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+  margin-top: var(--spacing-lg);
+}
+
+#submit {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  display: inline-block;
+}
+
+#submit:hover {
+  background: #229954;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#submit:active {
+  transform: translateY(0);
+}
+
+#submit:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#submit.loading {
+  position: relative;
+  color: transparent;
+}
+
+#submit.loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  border: 3px solid white;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== Info Box (for messages) ===== */
+#info_box {
+  background: var(--background-alt);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  text-align: center;
+}
+
+#info_box.success {
+  background: #d4edda;
+  border-color: #28a745;
+  color: #155724;
+}
+
+#info_box.error {
+  background: #f8d7da;
+  border-color: #dc3545;
+  color: #721c24;
+}
+
+/* ===== Footer/Attribution ===== */
+.attribution {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.attribution a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Accessibility ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus states for accessibility */
+a:focus,
+button:focus,
+input:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  body {
+    background: white;
+  }
+
+  .submit-section {
+    display: none;
+  }
+
+  #SurveyForm {
+    box-shadow: none;
+  }
+}

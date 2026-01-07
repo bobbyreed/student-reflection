@@ -1,955 +1,1460 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <script type="text/javascript" src="jquery-1.5.2.min.js"></script>
-    <script type="text/javascript" src="calculator.js"></script>
-	<style type="text/css">
-    .alt_color {		background-color: #F7F7F7;
-    }
-    .error {		display: none;
-            color: red;	
-            float: right;
-    }
-    #info_box {		
-            display: none;	
-            background-color: #E5E5E5;
-            margin: 10px auto 5px auto;
-            border: 1px solid #999;	
-            padding: 10px;
-    }
-    th {
-        border: none;
-        background-color: #CCC;	
-    }
-    </style>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Student Online Self Assessment</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Online Self Assessment</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<h2>Take our Student Online Self-Assessment Survey to find out if you're a good candidate for online classes</h2>
-<h3>Use this self-assessment to gauge your readiness for online learning.</h3>
-<p>The following four characteristics are common for successful online students:</p>
-<ul>
-  <li>Basic technical and academic skills</li>
-  <li>Ability to study independently</li>
-  <li>Good organizational skills</li>
-  <li>Willing to devote the same amount of time and effort as a face-to-face course</li>
-</ul>
-<p>To get a good idea of your chances for success as an online student, rate how well each item below describes yourself.</p>
-<form name="SurveyForm" id="SurveyForm" method="get">
-            <table bordercolor="#" border="1">
-              <tbody>
-                <tr>
-                  <td colspan="6" bgcolor="#FFFFFF"><p><strong>Directions:</strong> The following items measure your ability to perform different tasks. There are no right or wrong answers so your first reaction is usually best. Please do not omit any items. Rate how well each item describes you by selecting the button in the correct column for each item.</p></td>
-                </tr>
-                <tr valign="bottom">
-                  <th align="left">Computer Skills</th>
-                  <th width="1""%">Strongly Disagree</th>
-                  <th width="1""%">Disagree</th>
-                  <th width="1""%">Neither Agree nor Disagree</th>
-                  <th width="1""%">Agree</th>
-                  <th width="1""%">Strongly Agree</th>
-                </tr>
-                <tr id="a1">
-                  <td class="entry">I am capable of learning new technologies.&nbsp;
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="a1" value="1" class="a1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a1" value="2" class="a1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a1" value="3" class="a1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a1" value="4" class="a1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a1" value="5" class="a1" />
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I am capable of sending and receiving e-mail.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="a2" value="1" class="a2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a2" value="2" class="a2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a2" value="3" class="a2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a2" value="4" class="a2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a2" value="5" class="a2" />
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I am capable of attaching files to an e-mail message.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="a3" value="1" class="a3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a3" value="2" class="a3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a3" value="3" class="a3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a3" value="4" class="a3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a3" value="5" class="a3" />
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I am a competent Internet browser.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="a4" value="1" class="a4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a4" value="2" class="a4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a4" value="3" class="a4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a4" value="4" class="a4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a4" value="5" class="a4" />
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I am capable of using standard word processing software.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="a5" value="1" class="a5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a5" value="2" class="a5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a5" value="3" class="a5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a5" value="4" class="a5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a5" value="5" class="a5" />
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I am capable of managing files on a computer.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="a6" value="1" class="a6" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a6" value="2" class="a6" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a6" value="3" class="a6" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a6" value="4" class="a6" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a6" value="5" class="a6" />
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I can download new software when necessary.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="a7" value="1" class="a7" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a7" value="2" class="a7" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a7" value="3" class="a7" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a7" value="4" class="a7" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a7" value="5" class="a7" />
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I can install new software when necessary.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="a8" value="1" class="a8" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a8" value="2" class="a8" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a8" value="3" class="a8" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a8" value="4" class="a8" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a8" value="5" class="a8" />
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I can copy and paste text using a computer.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="a9" value="1" class="a9" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a9" value="2" class="a9" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a9" value="3" class="a9" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a9" value="4" class="a9" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a9" value="5" class="a9" />
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I am capable of using discussion boards online.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="a10" value="1" class="a10" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a10" value="2" class="a10" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a10" value="3" class="a10" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a10" value="4" class="a10" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a10" value="5" class="a10" />
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I am capable of using chat rooms online.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="a11" value="1" class="a11" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a11" value="2" class="a11" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a11" value="3" class="a11" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a11" value="4" class="a11" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="a11" value="5" class="a11" />
-                  </center></td>
-                </tr>
-                <tr valign="bottom">
-                  <th align="left">Independent Learning</th>
-                  <th width="1""%">Strongly Disagree</th>
-                  <th width="1""%">Disagree</th>
-                  <th width="1""%">Neither Agree nor Disagree</th>
-                  <th width="1""%">Agree</th>
-                  <th width="1""%">Strongly Agree</th>
-                </tr>
-                <tr>
-                  <td class="entry">I am capable of prioritizing my responsibilities.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="b1" value="1" class="b1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b1" value="2" class="b1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b1" value="3" class="b1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b1" value="4" class="b1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b1" value="5" class="b1" />
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I am a good time manager.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="b2" value="1" class="b2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b2" value="2" class="b2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b2" value="3" class="b2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b2" value="4" class="b2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b2" value="5" class="b2" />
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I am a procrastinator.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="b3" value="1" class="b3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b3" value="2" class="b3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b3" value="3" class="b3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b3" value="4" class="b3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b3" value="5" class="b3" />
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I am capable of making time for my coursework.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="b4" value="5" class="b4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b4" value="4" class="b4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b4" value="3" class="b4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b4" value="2" class="b4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b4" value="1" class="b4" />
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I am able to balance many tasks at one time.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="b5" value="1" class="b5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b5" value="2" class="b5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b5" value="3" class="b5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b5" value="4" class="b5"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b5" value="5" class="b5" />
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I am goal-oriented.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="b6" value="1" class="b6" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b6" value="2" class="b6" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b6" value="3" class="b6" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b6" value="4" class="b6" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b6" value="5" class="b6" />
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I am self-disciplined when it comes to my studies.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="b7" value="1" class="b7" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b7" value="2" class="b7" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b7" value="3" class="b7" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b7" value="4" class="b7" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b7" value="5" class="b7" />
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I am self-motivated.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="b8" value="1" class="b8" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b8" value="2" class="b8" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b8" value="3" class="b8" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b8" value="4" class="b8" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b8" value="5" class="b8" />
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I take responsibility for my learning.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="b9" value="1" class="b9" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b9" value="2" class="b9" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b9" value="3" class="b9" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b9" value="4" class="b9" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b9" value="5" class="b9" />
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I am capable of critical thinking.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="b10" value="1" class="b10" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b10" value="2" class="b10" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b10" value="3" class="b10" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b10" value="4" class="b10" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="b10" value="5" class="b10" />
-                  </center></td>
-                </tr>
-                <tr valign="bottom">
-                  <th align="left">Dependent Learning </th>
-                  <th width="1""%">Strongly Disagree</th>
-                  <th width="1""%">Disagree</th>
-                  <th width="1""%">Neither Agree nor Disagree</th>
-                  <th width="1""%">Agree</th>
-                  <th width="1""%">Strongly Agree</th>
-                </tr>
-                <tr>
-                  <td class="entry">I often leave tasks unfinished.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="c1" value="5" class="c1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c1" value="4" class="c1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c1" value="3" class="c1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c1" value="2" class="c1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c1" value="1" class="c1" />
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I require help to understand written instructions.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="c2" value="5" class="c2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c2" value="4" class="c2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c2" value="3" class="c2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c2" value="2" class="c2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c2" value="1" class="c2" />
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I wait until the last minute to work on assignments.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="c3" value="5" class="c3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c3" value="4" class="c3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c3" value="3" class="c3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c3" value="2" class="c3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c3" value="1" class="c3" />
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I have trouble comprehending what I read.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="c4" value="5" class="c4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c4" value="4" class="c4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c4" value="3" class="c4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c4" value="2" class="c4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c4" value="1" class="c4" />
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I need faculty to remind me of assignment due dates.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="c5" value="5" class="c5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c5" value="4" class="c5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c5" value="3" class="c5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c5" value="2" class="c5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c5" value="1" class="c5" />
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I need incentives/rewards to motivate me to complete a task.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="c6" value="5" class="c6" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c6" value="4" class="c6" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c6" value="3" class="c6" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c6" value="2" class="c6" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="c6" value="1" class="c6" />
-                  </center></td>
-                </tr>
-                <tr valign="bottom">
-                  <th align="left">Need for Online Learning</th>
-                  <th width="1""%">Strongly Disagree</th>
-                  <th width="1""%">Disagree</th>
-                  <th width="1""%">Neither Agree nor Disagree</th>
-                  <th width="1""%">Agree</th>
-                  <th width="1""%">Strongly Agree</th>
-                </tr>
-                <tr>
-                  <td class="entry">Because of my personal schedule, I need online courses.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="d1" value="1" class="d1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d1" value="2" class="d1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d1" value="3" class="d1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d1" value="4" class="d1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d1" value="5" class="d1" />
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">It is difficult for me to go to campus to complete course requirements.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="d2" value="1" class="d2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d2" value="2" class="d2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d2" value="3" class="d2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d2" value="4" class="d2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d2" value="5" class="d2" />
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I need online courses because of my geographical distance from universities.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="d3" value="1" class="d3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d3" value="2" class="d3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d3" value="3" class="d3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d3" value="4" class="d3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d3" value="5" class="d3" />
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I need online courses because of my work schedule.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="d4" value="1" class="d4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d4" value="2" class="d4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d4" value="3" class="d4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d4" value="4" class="d4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d4" value="5" class="d4" />
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I need the freedom of completing coursework at the time and place of my choosing.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="d5" value="1" class="d5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d5" value="2" class="d5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d5" value="3" class="d5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d5" value="4" class="d5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="d5" value="5" class="d5" />
-                  </center></td>
-                </tr>
-                <tr valign="bottom">
-                  <th align="left">Academic Skills</th>
-                  <th width="1""%">Strongly Disagree</th>
-                  <th width="1""%">Disagree</th>
-                  <th width="1""%">Neither Agree nor Disagree</th>
-                  <th width="1""%">Agree</th>
-                  <th width="1""%">Strongly Agree</th>
-                </tr>
-                <tr>
-                  <td class="entry">I can learn by working independently.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="e1" value="1" class="e1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e1" value="2" class="e1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e1" value="3" class="e1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e1" value="4" class="e1" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e1" value="5" class="e1" />
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I am self-directed in my learning.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="e2" value="1" class="e2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e2" value="2" class="e2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e2" value="3" class="e2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e2" value="4" class="e2" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e2" value="5" class="e2" />
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I am capable of solving problems alone.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="e3" value="1" class="e3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e3" value="2" class="e3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e3" value="3" class="e3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e3" value="4" class="e3" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e3" value="5" class="e3" />
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I need face-to-face interaction to learn.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="e4" value="5" class="e4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e4" value="4" class="e4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e4" value="3" class="e4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e4" value="2" class="e4" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e4" value="1" class="e4" />
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I need faculty feedback on my completed assignments.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="e5" value="5" class="e5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e5" value="4" class="e5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e5" value="3" class="e5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e5" value="2" class="e5" />
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e5" value="1" class="e5" />
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I am a good reader.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="e6" value="1" class="e6"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e6" value="2" class="e6"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e6" value="3" class="e6"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e6" value="4" class="e6"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e6" value="5" class="e6"/>
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I need classroom discussion to learn.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="e7" value="1" class="e7"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e7" value="2" class="e7"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e7" value="3" class="e7"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e7" value="4" class="e7"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e7" value="5" class="e7"/>
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I am capable of asking for help when I have a problem.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="e8" value="1" class="e8"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e8" value="2" class="e8"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e8" value="3" class="e8"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e8" value="4" class="e8"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e8" value="5" class="e8"/>
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I am comfortable learning new skills.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="e9" value="1" class="e9"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e9" value="2" class="e9"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e9" value="3" class="e9"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e9" value="4" class="e9"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e9" value="5" class="e9"/>
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I read carefully.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="e10" value="1" class="e10"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e10" value="2" class="e10"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e10" value="3" class="e10"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e10" value="4" class="e10"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e10" value="5" class="e10"/>
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I am a good writer.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="e11" value="1" class="e11"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e11" value="2" class="e11"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e11" value="3" class="e11"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e11" value="4" class="e11"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e11" value="5" class="e11"/>
-                  </center></td>
-                </tr>
-                <tr class="alt_color">
-                  <td class="entry">I am capable of following written instructions.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="e12" value="1" class="e12"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e12" value="2" class="e12"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e12" value="3" class="e12"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e12" value="4" class="e12"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e12" value="5" class="e12"/>
-                  </center></td>
-                </tr>
-                <tr>
-                  <td class="entry">I am capable of conveying my ideas in writing.
-                    <div class="error"><img src="images/error.jpg" alt="error" border="0" style="border:none;" />&nbsp; Please make a selection.</div></td>
-                  <td><center>
-                    <input type="radio" name="e13" value="1" class="e13"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e13" value="2" class="e13"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e13" value="3" class="e13"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e13" value="4" class="e13"/>
-                  </center></td>
-                  <td><center>
-                    <input type="radio" name="e13" value="5" class="e13"/>
-                  </center></td>
-                </tr>
-                <tr>
-                  <td colspan="6"><div id="info_box"></div>
-                    <center>
-                      <a href="#" id="submit"><img src="images/submit.png" alt="submit" border="0" style="border: none;"/></a>
-                    </center></td>
-                </tr>
-              </tbody>
-  </table>
-          </form>
-          * This survey is based on the self-assessment test that was created by <a href="http://faculty.txwes.edu/mskerr" target="_blank">Marcel S. Kerr</a>, Kimberly Rynearson, and Marcus C. Kerr;
-            TOOLS: Test of Online Learning Success and is being used with their permission.
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"47cb2f872cab4ef58e03637f47257060","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+    <header>
+        <h2>Take our Student Online Self-Assessment Survey to find out if you're a good candidate for online classes</h2>
+        <h3>Use this self-assessment to gauge your readiness for online learning.</h3>
+        <p>The following four characteristics are common for successful online students:</p>
+        <ul>
+            <li>Basic technical and academic skills</li>
+            <li>Ability to study independently</li>
+            <li>Good organizational skills</li>
+            <li>Willing to devote the same amount of time and effort as a face-to-face course</li>
+        </ul>
+        <p>To get a good idea of your chances for success as an online student, rate how well each item below describes yourself.</p>
+    </header>
+
+    <form id="SurveyForm" name="SurveyForm">
+        <!-- Student Information Section -->
+        <section class="student-info">
+            <h3>Your Information</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="studentName">Student Name <span class="required">*</span></label>
+                    <input type="text" id="studentName" name="studentName" required>
+                    <div class="error" id="studentNameError">Please enter your name.</div>
+                </div>
+                <div class="form-group">
+                    <label for="studentEmail">Student Email <span class="required">*</span></label>
+                    <input type="email" id="studentEmail" name="studentEmail" required>
+                    <div class="error" id="studentEmailError">Please enter a valid email address.</div>
+                </div>
+            </div>
+            <div class="form-row single">
+                <div class="form-group">
+                    <label for="professorEmail">Professor Email <span class="required">*</span></label>
+                    <input type="email" id="professorEmail" name="professorEmail" required>
+                    <div class="error" id="professorEmailError">Please enter your professor's email address.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Directions -->
+        <section class="directions">
+            <p><strong>Directions:</strong> The following items measure your ability to perform different tasks. There are no right or wrong answers so your first reaction is usually best. Please do not omit any items. Rate how well each item describes you by selecting the button in the correct column for each item.</p>
+        </section>
+
+        <!-- Computer Skills Section -->
+        <section class="survey-section">
+            <div class="section-header">
+                <h4>Computer Skills</h4>
+            </div>
+            <div class="scale-labels">
+                <div class="label-text"></div>
+                <div>Strongly Disagree</div>
+                <div>Disagree</div>
+                <div>Neither Agree nor Disagree</div>
+                <div>Agree</div>
+                <div>Strongly Agree</div>
+            </div>
+            <div class="question-list">
+                <div class="question-item" data-question="a1">
+                    <div class="question-content">
+                        <div class="question-text">I am capable of learning new technologies.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="a1" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a1" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a1" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a1" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a1" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="a2">
+                    <div class="question-content">
+                        <div class="question-text">I am capable of sending and receiving e-mail.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="a2" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a2" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a2" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a2" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a2" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="a3">
+                    <div class="question-content">
+                        <div class="question-text">I am capable of attaching files to an e-mail message.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="a3" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a3" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a3" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a3" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a3" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="a4">
+                    <div class="question-content">
+                        <div class="question-text">I am a competent Internet browser.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="a4" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a4" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a4" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a4" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a4" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="a5">
+                    <div class="question-content">
+                        <div class="question-text">I am capable of using standard word processing software.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="a5" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a5" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a5" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a5" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a5" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="a6">
+                    <div class="question-content">
+                        <div class="question-text">I am capable of managing files on a computer.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="a6" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a6" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a6" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a6" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a6" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="a7">
+                    <div class="question-content">
+                        <div class="question-text">I can download new software when necessary.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="a7" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a7" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a7" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a7" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a7" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="a8">
+                    <div class="question-content">
+                        <div class="question-text">I can install new software when necessary.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="a8" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a8" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a8" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a8" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a8" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="a9">
+                    <div class="question-content">
+                        <div class="question-text">I can copy and paste text using a computer.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="a9" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a9" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a9" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a9" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a9" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="a10">
+                    <div class="question-content">
+                        <div class="question-text">I am capable of using discussion boards online.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="a10" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a10" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a10" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a10" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a10" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="a11">
+                    <div class="question-content">
+                        <div class="question-text">I am capable of using chat rooms online.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="a11" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a11" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a11" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a11" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="a11" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Independent Learning Section -->
+        <section class="survey-section">
+            <div class="section-header">
+                <h4>Independent Learning</h4>
+            </div>
+            <div class="scale-labels">
+                <div class="label-text"></div>
+                <div>Strongly Disagree</div>
+                <div>Disagree</div>
+                <div>Neither Agree nor Disagree</div>
+                <div>Agree</div>
+                <div>Strongly Agree</div>
+            </div>
+            <div class="question-list">
+                <div class="question-item" data-question="b1">
+                    <div class="question-content">
+                        <div class="question-text">I am capable of prioritizing my responsibilities.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="b1" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b1" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b1" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b1" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b1" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="b2">
+                    <div class="question-content">
+                        <div class="question-text">I am a good time manager.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="b2" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b2" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b2" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b2" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b2" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="b3">
+                    <div class="question-content">
+                        <div class="question-text">I am a procrastinator.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="b3" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b3" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b3" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b3" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b3" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="b4">
+                    <div class="question-content">
+                        <div class="question-text">I am capable of making time for my coursework.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="b4" value="5" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b4" value="4">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b4" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b4" value="2">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b4" value="1">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="b5">
+                    <div class="question-content">
+                        <div class="question-text">I am able to balance many tasks at one time.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="b5" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b5" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b5" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b5" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b5" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="b6">
+                    <div class="question-content">
+                        <div class="question-text">I am goal-oriented.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="b6" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b6" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b6" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b6" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b6" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="b7">
+                    <div class="question-content">
+                        <div class="question-text">I am self-disciplined when it comes to my studies.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="b7" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b7" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b7" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b7" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b7" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="b8">
+                    <div class="question-content">
+                        <div class="question-text">I am self-motivated.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="b8" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b8" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b8" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b8" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b8" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="b9">
+                    <div class="question-content">
+                        <div class="question-text">I take responsibility for my learning.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="b9" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b9" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b9" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b9" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b9" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="b10">
+                    <div class="question-content">
+                        <div class="question-text">I am capable of critical thinking.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="b10" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b10" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b10" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b10" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="b10" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dependent Learning Section -->
+        <section class="survey-section">
+            <div class="section-header">
+                <h4>Dependent Learning</h4>
+            </div>
+            <div class="scale-labels">
+                <div class="label-text"></div>
+                <div>Strongly Disagree</div>
+                <div>Disagree</div>
+                <div>Neither Agree nor Disagree</div>
+                <div>Agree</div>
+                <div>Strongly Agree</div>
+            </div>
+            <div class="question-list">
+                <div class="question-item" data-question="c1">
+                    <div class="question-content">
+                        <div class="question-text">I often leave tasks unfinished.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="c1" value="5" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c1" value="4">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c1" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c1" value="2">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c1" value="1">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="c2">
+                    <div class="question-content">
+                        <div class="question-text">I require help to understand written instructions.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="c2" value="5" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c2" value="4">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c2" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c2" value="2">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c2" value="1">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="c3">
+                    <div class="question-content">
+                        <div class="question-text">I wait until the last minute to work on assignments.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="c3" value="5" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c3" value="4">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c3" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c3" value="2">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c3" value="1">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="c4">
+                    <div class="question-content">
+                        <div class="question-text">I have trouble comprehending what I read.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="c4" value="5" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c4" value="4">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c4" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c4" value="2">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c4" value="1">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="c5">
+                    <div class="question-content">
+                        <div class="question-text">I need faculty to remind me of assignment due dates.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="c5" value="5" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c5" value="4">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c5" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c5" value="2">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c5" value="1">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="c6">
+                    <div class="question-content">
+                        <div class="question-text">I need incentives/rewards to motivate me to complete a task.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="c6" value="5" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c6" value="4">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c6" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c6" value="2">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="c6" value="1">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Need for Online Learning Section -->
+        <section class="survey-section">
+            <div class="section-header">
+                <h4>Need for Online Learning</h4>
+            </div>
+            <div class="scale-labels">
+                <div class="label-text"></div>
+                <div>Strongly Disagree</div>
+                <div>Disagree</div>
+                <div>Neither Agree nor Disagree</div>
+                <div>Agree</div>
+                <div>Strongly Agree</div>
+            </div>
+            <div class="question-list">
+                <div class="question-item" data-question="d1">
+                    <div class="question-content">
+                        <div class="question-text">Because of my personal schedule, I need online courses.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="d1" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d1" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d1" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d1" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d1" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="d2">
+                    <div class="question-content">
+                        <div class="question-text">It is difficult for me to go to campus to complete course requirements.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="d2" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d2" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d2" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d2" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d2" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="d3">
+                    <div class="question-content">
+                        <div class="question-text">I need online courses because of my geographical distance from universities.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="d3" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d3" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d3" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d3" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d3" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="d4">
+                    <div class="question-content">
+                        <div class="question-text">I need online courses because of my work schedule.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="d4" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d4" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d4" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d4" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d4" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="d5">
+                    <div class="question-content">
+                        <div class="question-text">I need the freedom of completing coursework at the time and place of my choosing.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="d5" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d5" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d5" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d5" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="d5" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Skills Section -->
+        <section class="survey-section">
+            <div class="section-header">
+                <h4>Academic Skills</h4>
+            </div>
+            <div class="scale-labels">
+                <div class="label-text"></div>
+                <div>Strongly Disagree</div>
+                <div>Disagree</div>
+                <div>Neither Agree nor Disagree</div>
+                <div>Agree</div>
+                <div>Strongly Agree</div>
+            </div>
+            <div class="question-list">
+                <div class="question-item" data-question="e1">
+                    <div class="question-content">
+                        <div class="question-text">I can learn by working independently.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="e1" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e1" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e1" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e1" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e1" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="e2">
+                    <div class="question-content">
+                        <div class="question-text">I am self-directed in my learning.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="e2" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e2" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e2" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e2" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e2" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="e3">
+                    <div class="question-content">
+                        <div class="question-text">I am capable of solving problems alone.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="e3" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e3" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e3" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e3" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e3" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="e4">
+                    <div class="question-content">
+                        <div class="question-text">I need face-to-face interaction to learn.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="e4" value="5" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e4" value="4">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e4" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e4" value="2">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e4" value="1">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="e5">
+                    <div class="question-content">
+                        <div class="question-text">I need faculty feedback on my completed assignments.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="e5" value="5" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e5" value="4">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e5" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e5" value="2">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e5" value="1">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="e6">
+                    <div class="question-content">
+                        <div class="question-text">I am a good reader.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="e6" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e6" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e6" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e6" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e6" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="e7">
+                    <div class="question-content">
+                        <div class="question-text">I need classroom discussion to learn.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="e7" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e7" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e7" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e7" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e7" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="e8">
+                    <div class="question-content">
+                        <div class="question-text">I am capable of asking for help when I have a problem.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="e8" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e8" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e8" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e8" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e8" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="e9">
+                    <div class="question-content">
+                        <div class="question-text">I am comfortable learning new skills.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="e9" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e9" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e9" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e9" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e9" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="e10">
+                    <div class="question-content">
+                        <div class="question-text">I read carefully.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="e10" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e10" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e10" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e10" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e10" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="e11">
+                    <div class="question-content">
+                        <div class="question-text">I am a good writer.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="e11" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e11" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e11" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e11" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e11" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="e12">
+                    <div class="question-content">
+                        <div class="question-text">I am capable of following written instructions.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="e12" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e12" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e12" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e12" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e12" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+
+                <div class="question-item" data-question="e13">
+                    <div class="question-content">
+                        <div class="question-text">I am capable of conveying my ideas in writing.</div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="e13" value="1" required>
+                                <span class="radio-label">Strongly Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e13" value="2">
+                                <span class="radio-label">Disagree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e13" value="3">
+                                <span class="radio-label">Neither</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e13" value="4">
+                                <span class="radio-label">Agree</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="e13" value="5">
+                                <span class="radio-label">Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">Please make a selection.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Box for messages -->
+        <div id="info_box" style="display: none;"></div>
+
+        <!-- Submit Section -->
+        <div class="submit-section">
+            <button type="submit" id="submit">Submit Survey</button>
+        </div>
+    </form>
+
+    <!-- Attribution -->
+    <footer class="attribution">
+        <p>* This survey is based on the self-assessment test that was created by <a href="http://faculty.txwes.edu/mskerr" target="_blank">Marcel S. Kerr</a>, Kimberly Rynearson, and Marcus C. Kerr; TOOLS: Test of Online Learning Success and is being used with their permission.</p>
+        <p>Contact Professor Kristen Kirkman - Writing Program Coordinator - <a href="mailto:kkirkman@rose.edu">kkirkman@rose.edu</a></p>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-functions-compat.js"></script>
+
+    <!-- Survey Logic -->
+    <script src="calculator.js"></script>
 </body>
 </html>
