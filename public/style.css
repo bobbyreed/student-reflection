@@ -213,8 +213,9 @@ li {
 
 @media (min-width: 1024px) {
   .question-content {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr repeat(5, minmax(80px, 1fr));
     align-items: center;
+    gap: var(--spacing-sm);
   }
 }
 
@@ -240,8 +241,7 @@ li {
 
 @media (min-width: 1024px) {
   .radio-group {
-    gap: var(--spacing-sm);
-    flex-wrap: nowrap;
+    display: contents; /* Make radio buttons direct grid children */
   }
 }
 
@@ -251,6 +251,12 @@ li {
   flex-direction: column;
   align-items: center;
   min-width: 80px;
+}
+
+@media (min-width: 1024px) {
+  .radio-option {
+    justify-content: center; /* Center radio button in its grid cell */
+  }
 }
 
 /* Custom radio button styling */
