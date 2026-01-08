@@ -152,7 +152,8 @@ Contact Professor Kristen Kirkman - Writing Program Coordinator - kkirkman@rose.
     functions.logger.info('Email sent successfully', {
       emailId: emailResponse.id,
       studentName,
-      emailCount: result.count
+      emailCount: result.count,
+      resendResponse: emailResponse
     });
 
     return {
