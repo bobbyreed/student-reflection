@@ -94,7 +94,7 @@ exports.sendSurveyNotification = functions
     });
 
     const emailResponse = await getResendClient().emails.send({
-      from: 'Student Survey <noreply@delivered.resend.dev>',
+      from: 'Student Survey <noreply@reflection.kristenkirkman.life>',
       to: professorEmail,
       subject: `Student Survey Completion - ${studentName}`,
       html: `
