@@ -1,4 +1,4 @@
-const functions = require('firebase-functions');
+const functions = require('firebase-functions/v1');
 const admin = require('firebase-admin');
 const { Resend } = require('resend');
 
@@ -6,8 +6,15 @@ const { Resend } = require('resend');
 admin.initializeApp();
 const db = admin.firestore();
 
-// Initialize Resend with API key from environment
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Resend client will be initialized lazily when needed
+// This avoids errors during deployment analysis when env vars aren't available
+let resend = null;
+function getResendClient() {
+  if (!resend) {
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resend;
+}
 
 /**
  * Cloud Function to send survey completion notification email
@@ -81,7 +88,7 @@ exports.sendSurveyNotification = functions.https.onCall(async (data, context) =>
       timeStyle: 'short'
     });
 
-    const emailResponse = await resend.emails.send({
+    const emailResponse = await getResendClient().emails.send({
       from: 'Student Survey <noreply@delivered.resend.dev>',
       to: professorEmail,
       subject: `Student Survey Completion - ${studentName}`,
