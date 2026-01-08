@@ -6,12 +6,15 @@ const { Resend } = require('resend');
 admin.initializeApp();
 const db = admin.firestore();
 
+// Define the secret for Resend API key
+const resendApiKey = functions.params.defineSecret('RESEND_API_KEY');
+
 // Resend client will be initialized lazily when needed
 // This avoids errors during deployment analysis when env vars aren't available
 let resend = null;
 function getResendClient() {
   if (!resend) {
-    resend = new Resend(process.env.RESEND_API_KEY);
+    resend = new Resend(resendApiKey.value());
   }
   return resend;
 }
@@ -20,7 +23,9 @@ function getResendClient() {
  * Cloud Function to send survey completion notification email
  * Includes rate limiting (90 emails/day) to stay within free tier
  */
-exports.sendSurveyNotification = functions.https.onCall(async (data, context) => {
+exports.sendSurveyNotification = functions
+  .runWith({ secrets: [resendApiKey] })
+  .https.onCall(async (data, context) => {
   try {
     // Validate input parameters
     const { professorEmail, studentEmail, studentName, timeSpent } = data;
