@@ -206,6 +206,126 @@ Student Name: ${studentName}
 Student Email: ${studentEmail}
 Time Spent: ${timeSpent}
 Submitted: ${timestamp}
+Student Results: 
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+            .header { background-color: #4CAF50; color: white; padding: 20px; border-radius: 5px; }
+            .content { margin: 20px 0; }
+            .score-section { background-color: #f9f9f9; padding: 15px; margin: 15px 0; border-left: 4px solid #4CAF50; }
+            .score-title { font-weight: bold; font-size: 18px; margin-bottom: 10px; }
+            .score-value { font-size: 24px; color: #4CAF50; font-weight: bold; }
+            .subscale { margin: 10px 0; padding: 10px; background-color: #fff; border: 1px solid #ddd; }
+            .subscale-name { font-weight: bold; color: #555; }
+            .subscale-score { float: right; color: #4CAF50; font-weight: bold; }
+            .interpretation { background-color: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 15px 0; }
+            .resources { background-color: #e7f3ff; padding: 15px; margin: 15px 0; }
+            .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px; }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <div class="header">
+              <h2>Your Online Learning Self-Assessment Results</h2>
+            </div>
+            <div class="content">
+              <p>Dear ${studentName},</p>
+              <p>Thank you for completing the Online Learning Self-Assessment Survey. Here are your results:</p>
+
+              <div class="score-section">
+                <div class="score-title">Your Total Score</div>
+                <div class="score-value">${scores.total}</div>
+                <p><strong>${readinessCategory}</strong></p>
+                <p>${readinessText}</p>
+              </div>
+
+              <h3>Subscale Scores</h3>
+
+              <div class="subscale">
+                <span class="subscale-name">Computer Skills:</span>
+                <span class="subscale-score">${scores.computer}</span>
+                <div style="clear:both"></div>
+              </div>
+
+              <div class="subscale">
+                <span class="subscale-name">Independent Learning Skills:</span>
+                <span class="subscale-score">${scores.independent}</span>
+                <div style="clear:both"></div>
+              </div>
+
+              <div class="subscale">
+                <span class="subscale-name">Dependent Learning Skills:</span>
+                <span class="subscale-score">${scores.dependent}</span>
+                <div style="clear:both"></div>
+              </div>
+
+              <div class="subscale">
+                <span class="subscale-name">Academic Skills:</span>
+                <span class="subscale-score">${scores.academic}</span>
+                <div style="clear:both"></div>
+              </div>
+
+              <div class="subscale">
+                <span class="subscale-name">Need for Online Delivery:</span>
+                <span class="subscale-score">${scores.need}</span>
+                <div style="clear:both"></div>
+              </div>
+
+              <div class="interpretation">
+                <h4>Need for Online Delivery</h4>
+                <p>${needInterpretation}</p>
+                <p><em>Note: Unlike the other subscales, the Need for Online Delivery score identifies a need instead of a skill. If your score is 3.4 or higher, it indicates that your lifestyle may demand the flexibility that the online classroom can provide.</em></p>
+              </div>
+
+              ${scores.total < 178 ? `
+              <div class="resources">
+                <h4>Tips for Online Learning Success</h4>
+                <p><strong>Time Management:</strong> Consider if you have adequate time for online learning. Although online education offers accessibility and convenience, you need to create a schedule that allows you to focus on your studies while attending to other life commitments.</p>
+
+                <p><strong>Discipline and Determination:</strong> Online learning requires self-discipline. Make sure you can avoid distractions during study time and allot time for relaxation and extra-curricular activities that enrich your learning experience.</p>
+              </div>
+              ` : ''}
+            </div>
+          </div>
+        </body>
+        </html>
+      `,
+      text: `
+Your Online Learning Self-Assessment Results
+
+Dear ${studentName},
+
+Thank you for completing the Online Learning Self-Assessment Survey. Here are your results:
+
+YOUR TOTAL SCORE: ${scores.total}
+${readinessCategory}
+
+${readinessText}
+
+SUBSCALE SCORES:
+- Computer Skills: ${scores.computer}
+- Independent Learning Skills: ${scores.independent}
+- Dependent Learning Skills: ${scores.dependent}
+- Academic Skills: ${scores.academic}
+- Need for Online Delivery: ${scores.need}
+
+NEED FOR ONLINE DELIVERY:
+${needInterpretation}
+
+Note: Unlike the other subscales, the Need for Online Delivery score identifies a need instead of a skill. If your score is 3.4 or higher, it indicates that your lifestyle may demand the flexibility that the online classroom can provide.
+
+${scores.total < 178 ? `
+TIPS FOR ONLINE LEARNING SUCCESS:
+
+Time Management: Consider if you have adequate time for online learning. Although online education offers accessibility and convenience, you need to create a schedule that allows you to focus on your studies while attending to other life commitments.
+
+Discipline and Determination: Online learning requires self-discipline. Make sure you can avoid distractions during study time and allot time for relaxation and extra-curricular activities that enrich your learning experience.
+` : ''}
+Submitted: ${timestamp}
+Time Spent: ${timeSpent}
 
 ---
       `
