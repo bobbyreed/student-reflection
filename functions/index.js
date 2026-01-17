@@ -193,9 +193,6 @@ exports.sendSurveyNotification = functions
                 <span class="label">Submitted:</span> ${timestamp}
               </div>
             </div>
-            <div class="footer">
-              Contact Professor Kristen Kirkman - Writing Program Coordinator - kkirkman@rose.edu
-            </div>
           </div>
         </body>
         </html>
@@ -211,7 +208,6 @@ Time Spent: ${timeSpent}
 Submitted: ${timestamp}
 
 ---
-Contact Professor Kristen Kirkman - Writing Program Coordinator - kkirkman@rose.edu
       `
     });
 
@@ -296,25 +292,12 @@ Contact Professor Kristen Kirkman - Writing Program Coordinator - kkirkman@rose.
 
               ${scores.total < 178 ? `
               <div class="resources">
-                <h4>Resources to Help You Succeed</h4>
-                <p>Here are some resources that will assist you:</p>
-                <ul>
-                  <li><a href="http://www.studygs.net/">Study Guides and Strategies</a></li>
-                  <li><a href="https://www.michiganvirtual.org/">Michigan Virtual Learning Collaborative</a></li>
-                </ul>
-
                 <h4>Tips for Online Learning Success</h4>
                 <p><strong>Time Management:</strong> Consider if you have adequate time for online learning. Although online education offers accessibility and convenience, you need to create a schedule that allows you to focus on your studies while attending to other life commitments.</p>
 
                 <p><strong>Discipline and Determination:</strong> Online learning requires self-discipline. Make sure you can avoid distractions during study time and allot time for relaxation and extra-curricular activities that enrich your learning experience.</p>
               </div>
               ` : ''}
-
-              <div class="footer">
-                <p>Please contact our eLearning department at <a href="mailto:online@kirtland.edu">online@kirtland.edu</a> or call 989.275.5000 x500 with questions or concerns. Online learning is still an option and we can help!</p>
-                <p style="margin-top: 15px;">Submitted: ${timestamp}<br>Time Spent: ${timeSpent}</p>
-                <p style="margin-top: 15px;"><em>Contact Professor Kristen Kirkman - Writing Program Coordinator - kkirkman@rose.edu</em></p>
-              </div>
             </div>
           </div>
         </body>
@@ -345,24 +328,16 @@ ${needInterpretation}
 Note: Unlike the other subscales, the Need for Online Delivery score identifies a need instead of a skill. If your score is 3.4 or higher, it indicates that your lifestyle may demand the flexibility that the online classroom can provide.
 
 ${scores.total < 178 ? `
-RESOURCES TO HELP YOU SUCCEED:
-- Study Guides and Strategies: http://www.studygs.net/
-- Michigan Virtual Learning Collaborative: https://www.michiganvirtual.org/
-
 TIPS FOR ONLINE LEARNING SUCCESS:
 
 Time Management: Consider if you have adequate time for online learning. Although online education offers accessibility and convenience, you need to create a schedule that allows you to focus on your studies while attending to other life commitments.
 
 Discipline and Determination: Online learning requires self-discipline. Make sure you can avoid distractions during study time and allot time for relaxation and extra-curricular activities that enrich your learning experience.
 ` : ''}
-
-Please contact our eLearning department at online@kirtland.edu or call 989.275.5000 x500 with questions or concerns. Online learning is still an option and we can help!
-
 Submitted: ${timestamp}
 Time Spent: ${timeSpent}
 
 ---
-Contact Professor Kristen Kirkman - Writing Program Coordinator - kkirkman@rose.edu
       `
     });
 
